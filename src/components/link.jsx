@@ -8,19 +8,18 @@ const propTypes = {
 
 const Link = ({ active, children, onClick }) => {
   if (active) {
-    return <span>{children}</span>;
+    return <span>&#9679;&#032;{children}</span>;
   }
 
   return (
-    <a
-      href="#"
+    <span
       onClick={(e) => {
         e.preventDefault();
         onClick();
       }}
     >
-      {children}
-    </a>
+      &#9675;&#032;{children}
+    </span>
   );
 };
 
