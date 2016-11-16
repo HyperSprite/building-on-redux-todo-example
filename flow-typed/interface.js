@@ -3,7 +3,8 @@
 export type ActionStrings = (
   'ADD_TODO' |
   'TOGGLE_TODO' |
-  'SET_VISIBILITY_FILTER'
+  'SET_VISIBILITY_FILTER' |
+  'CHAT_INPUT'
 )
 
 export type ListIF = {

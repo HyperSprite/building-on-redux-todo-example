@@ -1,8 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { addTodo }from '../actions';
+import { chatInput } from '../actions';
 
-let AddTodo = ({ dispatch }) => {
+let ChatInput = ({ dispatch }) => {
   let input;
 
   return (
@@ -12,7 +12,7 @@ let AddTodo = ({ dispatch }) => {
         if (!input.value.trim()) {
           return;
         }
-        dispatch(addTodo(input.value));
+        dispatch(chatInput(input.value));
         input.value = '';
       }}
       >
@@ -21,13 +21,13 @@ let AddTodo = ({ dispatch }) => {
         }}
         />
         <button type="submit">
-          Add Todo
+          Submit
         </button>
       </form>
     </div>
   );
 };
 
-AddTodo = connect()(AddTodo);
+ChatInput = connect()(ChatInput);
 
-export default AddTodo;
+export default ChatInput;
