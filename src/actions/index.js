@@ -7,6 +7,7 @@ export const TYPES: {[key: ActionStrings]: ActionStrings} = {
   TOGGLE_TODO: 'TOGGLE_TODO',
   SET_VISIBILITY_FILTER: 'SET_VISIBILITY_FILTER',
   CHAT_INPUT: 'CHAT_INPUT',
+  CHAT_OUTPUT: 'CHAT_OUTPUT',
 };
 
 // Action creators
@@ -32,10 +33,11 @@ export const setVisibilityFilter = (filter) => {
   };
 };
 
-export const chatInput = (chat) => {
+export const chatInput = (chat, room) => {
   return {
     type: TYPES.CHAT_INPUT,
     id: getID(),
     chat,
+    room,
   };
 };

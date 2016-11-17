@@ -2,11 +2,15 @@ import React, { PropTypes } from 'react';
 
 const propTypes = {
   chat: PropTypes.string.isRequired,
+  time: PropTypes.number.isRequired,
+  // user: PropTypes.string.isRequired,
+  room: PropTypes.string.isRequired,
 };
 
-const ChatItem = ({ chat }) => (
+const ChatItem = ({ chat, time, user, room }) => (
   <div>
-    {chat}
+    <small>In {room} at {time} - {user} said: </small><br />
+    <strong> { chat } </strong>
   </div>
 );
 

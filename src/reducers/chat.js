@@ -5,10 +5,13 @@ import { TYPES } from '../actions';
 const chatitem = (state = {}, action) => {
   switch (action.type) {
 
-    case TYPES.CHAT_INPUT:
+    case TYPES.CHAT_OUTPUT:
       return {
         id: action.id,
         chat: action.chat,
+        time: action.time,
+        // user: action.user,
+        room: action.room,
       };
 
     default:
@@ -19,7 +22,7 @@ const chatitem = (state = {}, action) => {
 const chatitems = (state = [], action) => {
   switch (action.type) {
 
-    case TYPES.CHAT_INPUT:
+    case TYPES.CHAT_OUTPUT:
       return [
         ...state,
         chatitem(undefined, action),

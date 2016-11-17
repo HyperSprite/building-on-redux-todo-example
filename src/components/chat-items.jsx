@@ -5,6 +5,9 @@ const propTypes = {
   chatitems: PropTypes.arrayOf(PropTypes.shape({
     id: PropTypes.number,
     chat: PropTypes.string,
+    time: PropTypes.number,
+    // user: PropTypes.string,
+    room: PropTypes.string,
   })),
 };
 

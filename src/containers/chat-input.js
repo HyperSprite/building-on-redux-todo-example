@@ -4,6 +4,7 @@ import { chatInput } from '../actions';
 
 let ChatInput = ({ dispatch }) => {
   let input;
+  let room = 'main';
 
   return (
     <div>
@@ -12,7 +13,7 @@ let ChatInput = ({ dispatch }) => {
         if (!input.value.trim()) {
           return;
         }
-        dispatch(chatInput(input.value));
+        dispatch(chatInput(input.value, room));
         input.value = '';
       }}
       >
