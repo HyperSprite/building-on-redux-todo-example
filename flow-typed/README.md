@@ -3,7 +3,7 @@
 >This TL;DR assumes you already have Node and NPM installed.
 >For the official guide, check the blogpost [here](https://flowtype.org/blog/2016/10/13/Flow-Typed.html)
 
->Paths are reletive to this repo, asjust to your liking.
+>Paths are relative to this repo, adjust to your liking.
 
 ##Install flow
 First, install **Flow** and **Flow-CLI**
