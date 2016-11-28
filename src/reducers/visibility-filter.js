@@ -1,7 +1,7 @@
 // @flow
 import { TYPES } from '../actions';
 
-function visibilityFilter(state = 'SHOW_ALL', action) {
+function visibilityFilter(state: string = 'SHOW_ALL', action: VisibilityFilterIF) {
   switch (action.type) {
     case TYPES.SET_VISIBILITY_FILTER:
       return action.filter;

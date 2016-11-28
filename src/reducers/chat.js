@@ -2,7 +2,7 @@
 
 import { TYPES } from '../actions';
 
-const chatitem = (state = {}, action) => {
+const chatitem = (state: ReducerChatInputIF = {}, action: ChatInputIF) => {
   switch (action.type) {
 
     case TYPES.CHAT_OUTPUT:
@@ -19,7 +19,7 @@ const chatitem = (state = {}, action) => {
   }
 };
 
-const chatitems = (state = [], action) => {
+const chatitems = (state: ReducerChatItemsStateIF = [], action: ChatInputIF) => {
   switch (action.type) {
 
     case TYPES.CHAT_OUTPUT:

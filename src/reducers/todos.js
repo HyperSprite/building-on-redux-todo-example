@@ -2,7 +2,7 @@
 
 import { TYPES } from '../actions';
 
-const todo = (state = {}, action) => {
+const todo = (state: ReducerTodoIF = {}, action) => {
   switch (action.type) {
 
     case TYPES.ADD_TODO:
@@ -30,7 +30,7 @@ const todo = (state = {}, action) => {
   }
 };
 
-const todos = (state = [], action) => {
+const todos = (state: ReducerTodoItemsStateIF = [], action) => {
   switch (action.type) {
 
     case TYPES.ADD_TODO:
@@ -40,9 +40,9 @@ const todos = (state = [], action) => {
       ];
 
     case TYPES.TOGGLE_TODO:
-      return state.map(t =>
-        todo(t, action)
-      );
+      return state.map((t) => {
+        return todo(t, action);
+      });
 
     default:
       return state;
