@@ -2,22 +2,39 @@
 
 import { TYPES } from '../actions';
 
-const todo = (state: ReducerTodoIF = {}, action) => {
+type RedTodoActionIF = {
+  type: string,
+  paylaod: {
+    id: number,
+    text: string,
+  } | {
+    id: number,
+    completed: boolean,
+  },
+};
+
+type RedTodoReturnIF = {
+  id: number,
+  text: string,
+  completed: boolean,
+} | {
+  completed: boolean,
+}
+
+const todo = (state = {}, action: RedTodoActionIF): RedTodoReturnIF => {
   switch (action.type) {
 
     case TYPES.ADD_TODO:
       return {
-        id: action.id,
-        text: action.text,
+        id: action.payload.id,
+        text: action.payload.text,
         completed: false,
       };
 
     case TYPES.TOGGLE_TODO:
-      if (state.id !== action.id) {
-        // console.log(state.id, '!==', action.id);
+      if (state.id !== action.payload.id) {
         return state;
       }
-      // console.log(state.id, '===', action.id);
       return {
         ...state,
         ...{

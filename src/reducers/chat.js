@@ -2,16 +2,16 @@
 
 import { TYPES } from '../actions';
 
-const chatitem = (state: ReducerChatInputIF = {}, action: ChatInputIF) => {
+const chatitem = (state: ReducerChatInputIF = {}, action: ChatOutputIF) => {
   switch (action.type) {
 
     case TYPES.CHAT_OUTPUT:
       return {
-        id: action.id,
-        chat: action.chat,
-        time: action.time,
-        // user: action.user,
-        room: action.room,
+        id: action.payload.id,
+        chat: action.payload.chat,
+        time: action.payload.time,
+        user: action.payload.user,
+        room: action.payload.room,
       };
 
     default:
@@ -19,7 +19,7 @@ const chatitem = (state: ReducerChatInputIF = {}, action: ChatInputIF) => {
   }
 };
 
-const chatitems = (state: ReducerChatItemsStateIF = [], action: ChatInputIF) => {
+const chatitems = (state: ReducerChatItemsStateIF = [], action: ChatOutputIF) => {
   switch (action.type) {
 
     case TYPES.CHAT_OUTPUT:

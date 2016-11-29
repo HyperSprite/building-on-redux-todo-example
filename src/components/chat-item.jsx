@@ -3,7 +3,7 @@ import React, { PropTypes } from 'react';
 const propTypes = {
   chat: PropTypes.string.isRequired,
   time: PropTypes.number.isRequired,
-  user: PropTypes.string.isRequired,
+  user: PropTypes.string,
   room: PropTypes.string.isRequired,
 };
 

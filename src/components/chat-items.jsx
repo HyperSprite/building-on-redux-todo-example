@@ -2,13 +2,7 @@ import React, { PropTypes } from 'react';
 import ChatItem from './chat-item';
 
 const propTypes = {
-  chatitems: PropTypes.arrayOf(PropTypes.shape({
-    id: PropTypes.number,
-    chat: PropTypes.string,
-    time: PropTypes.number,
-    // user: PropTypes.string,
-    room: PropTypes.string,
-  })),
+  chatitems: PropTypes.array,
 };
 
 const ChatItems = ({ chatitems }) => (

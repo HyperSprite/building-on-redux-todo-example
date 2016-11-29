@@ -44,14 +44,16 @@ socketio.on('connection', (socket) => {
   console.log(`Socket connected: ${socket.id}`);
   socket.on('action', (action) => {
     if (action.type === 'CHAT_INPUT') {
-      console.log('action', action.type, action.chat, action.id, socket.id, '!');
-      socketio.in(action.room).emit('action', {
+      console.log('action', action.type, action.payload.chat, action.payload.id, socket.id, '!');
+      socketio.in(action.payload.room).emit('action', {
         type: 'CHAT_OUTPUT',
-        chat: action.chat,
-        time: getTime(),
-        // user: action.user,
-        id: action.id,
-        room: action.room,
+        payload: {
+          chat: action.payload.chat,
+          time: getTime(),
+          user: action.payload.user,
+          id: action.payload.id,
+          room: action.payload.room,
+        },
       });
     }
   });

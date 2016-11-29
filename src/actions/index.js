@@ -14,33 +14,42 @@ export const TYPES: {[key: ActionStrings]: ActionStrings} = {
 };
 
 // Action creators
-export const addTodo = (text: string): AddTodoIF => {
+export const addTodo = (text: string) => {
   return {
     type: TYPES.ADD_TODO,
-    id: getID(),
-    text,
+    payload: {
+      id: getID(),
+      text,
+    },
   };
 };
 
-export const toggleTodo = (id: number): ToggleTodoIF => {
+export const toggleTodo = (id: number) => {
   return {
     type: TYPES.TOGGLE_TODO,
-    id,
+    payload: {
+      id,
+    },
   };
 };
 
-export const setVisibilityFilter = (filter: string): VisibilityFilterIF => {
+export const setVisibilityFilter = (filter: string) => {
   return {
     type: TYPES.SET_VISIBILITY_FILTER,
-    filter,
+    payload: {
+      filter,
+    },
   };
 };
 
-export const chatInput = (chat: string, room: string): ChatInputIF => {
+export const chatInput = (chat: string, room: string, user: string) => {
   return {
     type: TYPES.CHAT_INPUT,
-    id: getID(),
-    chat,
-    room,
+    payload: {
+      id: getID(),
+      chat,
+      room,
+      user,
+    },
   };
 };

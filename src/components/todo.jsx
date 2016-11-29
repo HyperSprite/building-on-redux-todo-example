@@ -6,7 +6,7 @@ const propTypes = {
   text: PropTypes.string.isRequired,
 };
 
-const Todo = ({ onClick, completed, text }: TodoIF) => (
+const Todo = ({ onClick, completed, text }: ComponentTodoIF) => (
   <li
     onClick={onClick}
     style={{

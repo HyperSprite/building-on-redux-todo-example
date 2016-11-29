@@ -10,7 +10,7 @@ const propTypes = {
   onTodoClick: PropTypes.func.isRequired,
 };
 
-const TodoList = ({ todos, onTodoClick }: ListIF) => (
+const TodoList = ({ todos, onTodoClick }: ComponentListIF) => (
   <ul>
     {todos.map(todo =>
       <Todo

@@ -1,25 +1,34 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { chatInput } from '../actions';
 
+const propTypes = {
+  dispatch: PropTypes.func,
+};
+
 let ChatInput = ({ dispatch }) => {
-  let input;
-  let room = 'main';
+  let input: Object;
+  const room: string = 'main';
+  const user: string = 'bob';
 
   return (
     <div>
-      <form onSubmit={(e) => {
-        e.preventDefault();
-        if (!input.value.trim()) {
-          return;
+      <form
+        onSubmit={(e: Function) => {
+          e.preventDefault();
+          if (!input.value.trim()) {
+            return;
+          }
+          dispatch(chatInput(input.value, room, user));
+          input.value = '';
         }
-        dispatch(chatInput(input.value, room));
-        input.value = '';
-      }}
+      }
       >
-        <input ref={(node) => {
-          input = node;
-        }}
+        <input
+          ref={(node) => {
+            input = node;
+          }
+        }
         />
         <button type="submit">
           Submit
@@ -28,6 +37,8 @@ let ChatInput = ({ dispatch }) => {
     </div>
   );
 };
+
+ChatInput.propTypes = propTypes;
 
 ChatInput = connect()(ChatInput);
 
